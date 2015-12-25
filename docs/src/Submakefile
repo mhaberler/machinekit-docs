@@ -205,7 +205,7 @@ DOC_SRCS_ES := \
 	config/stepper-quickstart-es.txt \
 	getting-started/system-requirements-es.txt \
 
-DOC_SRCS = $(DOC_SRCS_EN) $(DOC_SRCS_FR) $(DOC_SRCS_ES)
+DOC_SRCS = $(DOC_SRCS_EN) # $(DOC_SRCS_FR) $(DOC_SRCS_ES)
 
 DOC_SRCS_TXT := $(patsubst %.txt, %.txt, $(DOC_SRCS))
 
@@ -294,7 +294,7 @@ endif
 pdfdocs: $(PDF_TARGETS)
 htmldocs: .htmldoc-stamp checkref
 
-.htmldoc-stamp: copy_asciidoc_files $(HTML_TARGETS) .html-images-stamp fudge_svgs
+.htmldoc-stamp:  fudge_svgs copy_asciidoc_files $(HTML_TARGETS) .html-images-stamp
 	touch $@
 
 fudge_svgs: code/homing.svg code/homing.svg code/hss.svg code/task-state-transitions.svg
@@ -304,7 +304,7 @@ copy_asciidoc_files:
 	cp -f /etc/asciidoc/stylesheets/*.css $(DOC_DIR)/html
 	cp -f /etc/asciidoc/javascripts/*.js $(DOC_DIR)/html
 
-checkref: checkref_en checkref_fr checkref_es
+checkref: checkref_en # checkref_fr checkref_es
 
 checkref_en: $(DOC_TARGETS_HTML_EN) $(DOC_DIR)/html/gcode.html .htmldoc-stamp
 	@$(DOC_SRCDIR)/checkref English $^
