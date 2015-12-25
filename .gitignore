@@ -39,3 +39,6 @@ oprofile*
 *.log
 position.txt
 *.9
+*.links
+*.links-stamp
+index.incl
