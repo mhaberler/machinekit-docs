@@ -1,8 +1,8 @@
 # the source-highlight language defs and lang.map dir
 HL_DIR=/usr/share/source-highlight
 
-LOC_HL_DIR=../docs/src/source-highlight
-LOC_LANG_MAP=$(LOC_HL_DIR)/local/lang.map
+#LOC_HL_DIR=../docs/src/source-highlight
+#LOC_LANG_MAP=$(LOC_HL_DIR)/local/lang.map
 
 # languages for which we provide our own .lang files
 # this includes overriding languages listed in HL_DIR

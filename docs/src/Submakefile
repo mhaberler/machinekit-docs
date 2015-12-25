@@ -1,12 +1,6 @@
 .PHONY: docs docsclean checkref checkref_en checkref_es checkref_fr
 .PHONY: pdfdocs htmldocs install-doc install-doc-pdf install-doc-html
 
-DOC_DIR:=../
-DOC_SRCDIR:=.
-
-LOC_HL_DIR=$(DOC_SRCDIR)/source-highlight
-LOC_LANG_MAP=$(LOC_HL_DIR)/local/lang.map
-
 GENERATED_MANPAGES += $(DOC_DIR)/man/man1/linuxcnc.1
 
 MAN_SRCS = $(sort \
