@@ -294,8 +294,10 @@ endif
 pdfdocs: $(PDF_TARGETS)
 htmldocs: .htmldoc-stamp checkref
 
-.htmldoc-stamp: copy_asciidoc_files $(HTML_TARGETS) .html-images-stamp
+.htmldoc-stamp: copy_asciidoc_files $(HTML_TARGETS) .html-images-stamp fudge_svgs
 	touch $@
+
+fudge_svgs: code/homing.svg code/homing.svg code/hss.svg code/task-state-transitions.svg
 
 .PHONY: copy_asciidoc_files
 copy_asciidoc_files:
