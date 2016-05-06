@@ -1,25 +1,30 @@
-:leveloffset: 0
+:leveloffset: +1
 
-== Getting Started
+:toc:
 
-:leveloffset: 1
+= Getting Started
 
-link:./getting-started/getting-started-platform[Setting up Machinekit on different platforms]
+:toc:
 
+include::getting-started/getting-started-platform.asciidoc[]
 
-link:../src/common/System_Requirements[System Requirements]
+include::src/common/System_Requirements.asciidoc[System Requirements]
 
-link:../src/quickstart/stepper_quickstart[Stepper Quickstart]
+include::src/quickstart/stepper_quickstart.asciidoc[Stepper Quickstart]
 
-link:../src/config/stepconf[Stepconf]
+include::src/config/stepconf.asciidoc[Stepconf]
 
-link:../src/config/pncconf[Pncconf]
+include::src/config/pncconf.asciidoc[Pncconf]
 
-link:../src/config/copy_and_run[Starting Up]
+include::src/config/copy_and_run.asciidoc[Starting Up]
 
-link:../src/common/Linux_FAQ[Linux FAQ]
+include::src/common/Linux_FAQ.asciidoc[Linux FAQ]
 
-link:../src/common/GPLD_Copyright[GPLD Copyright]
+include::src/common/GPLD_Copyright.asciidoc[GPLD Copyright]
+
+:leveloffset: -1
+
+:leveloffset: -1
 
 // = Index
 
