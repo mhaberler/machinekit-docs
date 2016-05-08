@@ -6,21 +6,23 @@
 
 :toc:
 
+:leveloffset: +1
+
 include::getting-started/getting-started-platform.asciidoc[]
 
-include::src/common/System_Requirements.asciidoc[System Requirements]
+include::common/System_Requirements.asciidoc[System Requirements]
 
-include::src/quickstart/stepper_quickstart.asciidoc[Stepper Quickstart]
+include::quickstart/stepper_quickstart.asciidoc[Stepper Quickstart]
 
-include::src/config/stepconf.asciidoc[Stepconf]
+include::config/stepconf.asciidoc[Stepconf]
 
-include::src/config/pncconf.asciidoc[Pncconf]
+include::config/pncconf.asciidoc[Pncconf]
 
-include::src/config/copy_and_run.asciidoc[Starting Up]
+include::config/copy_and_run.asciidoc[Starting Up]
 
-include::src/common/Linux_FAQ.asciidoc[Linux FAQ]
+include::common/Linux_FAQ.asciidoc[Linux FAQ]
 
-include::src/common/GPLD_Copyright.asciidoc[GPLD Copyright]
+include::common/GPLD_Copyright.asciidoc[GPLD Copyright]
 
 :leveloffset: -1
 

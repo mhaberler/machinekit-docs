@@ -1,8 +1,11 @@
+
+:imagesdir: config/images
+
 = Stepper Configuration Wizard
 
 [[cha:stepconf-wizard]] (((Stepconf Wizard)))
 
-Machinekit is capable of controlling a wide range of machinery 
+Machinekit is capable of controlling a wide range of machinery
 using many different hardware interfaces.
 
 Stepconf is a program that generates configuration files for Machinekit
@@ -28,7 +31,13 @@ Step by Step Instructions
 
 .Entry Page[[cap:Entry-Page]]
 
-image::images/stepconf-config.png[align="center"]
+[NOTE]
+====
+TODO, fix this picture in the source
+
+image::stepconf-config.png[align="center"]
+
+====
 
 * 'Create New' - Creates a fresh configuration.
 
@@ -49,12 +58,12 @@ start your application.
 
 * 'Create Simulated Hardware' - This allows you to build a config for testing,
 even if you don't have the actual hardware.
- 
+
 == Basic Information[[sec:Basic-Information]]
 
 .Basic Information Page[[cap:Basic-Information-Page]]
 
-image::images/stepconf-basic.png[align="center"]
+image::stepconf-basic.png[align="center"]
 
 * 'Machine Name' - Choose a name for your machine. Use only uppercase letters,
 lowercase letters, digits, - and _.
@@ -96,7 +105,7 @@ direction in nanoseconds. If your not sure about this setting a value of
 step pulse in nanoseconds.  If your not sure about this setting a value of
 200,000 will work with most drives.
 
-* 'One / Two Parport' - Select how many parallel port are to be configured. 
+* 'One / Two Parport' - Select how many parallel port are to be configured.
 
 * 'Base Period Maximum Jitter' - Enter the result of the Latency Test here.
 To run a latency test press the 'Test Base Period Jitter' button. See the
@@ -110,12 +119,12 @@ based on the driver characteristics entered and latency test result.
 
 .Troubleshooting SMI Issues (Machinekit.org Wiki)
 ************************************************************
-Fixing Realtime problems caused by SMI on Debian is covered 
+Fixing Realtime problems caused by SMI on Debian is covered
 link:http://wiki.linuxcnc.org/cgi-bin/wiki.pl?FixingSMIIssues[Here]
 ************************************************************
 
 The important numbers are the 'max jitter'. In the example above 9075
-nanoseconds, or 9.075 microseconds, is the highest jitter. 
+nanoseconds, or 9.075 microseconds, is the highest jitter.
 Record this number, and enter it in
 the Base Period Maximum Jitter box.
 
@@ -134,13 +143,13 @@ whether you use software stepping or not.
 
 .Parallel Port Setup Page[[cap:Parallel-Port-Setup]]
 
-image::images/stepconf-pinout.png[align="center"]
+image::stepconf-pinout.png[align="center"]
 You may specify the address as a hexidecimal (often 0x378) or as linux's default
  port number (probably 0)
 
-For each pin, choose the signal which matches 
-your parallel port pinout. 
-Turn on the 'invert' check box if the signal is inverted 
+For each pin, choose the signal which matches
+your parallel port pinout.
+Turn on the 'invert' check box if the signal is inverted
 (0V for true/active, 5V for false/inactive).
 
 * 'Output pinout presets' - Automatically set pins 2 through 9 according to
@@ -166,7 +175,7 @@ step rate shown on the Basic Machine Configuration page.
 
 .Parallel Port 2 Setup Page[[cap:Parallel-Port-2-Setup]]
 
-image::images/stepconf-parport2.png[align="center"]
+image::stepconf-parport2.png[align="center"]
 
 The second Parallel port (if selected) can be configured and It's pins
 assigned on this page. +
@@ -180,7 +189,7 @@ You may specify the address as a hexidecimal (often 0x278) or as linux's default
 
 .Axis Configuration Page[[cap:Axis-Configuration-Page]]
 
-image::images/stepconf-axis.png[align="center"]
+image::stepconf-axis.png[align="center"]
 
 * 'Motor Steps Per Revolution' - The number of full steps per motor revolution.
 If you know how many degrees per step the motor is (e.g., 1.8 degree), then
@@ -261,12 +270,12 @@ This can be used after filling out all the information for this axis.
 
 .Test This Axis[[cap:Test-This-Axis]]
 
-image::images/stepconf-test.png[align="center"]
+image::stepconf-test.png[align="center"]
 
 Test this axis is a basic tester that only outputs step and direction signals
 to try different values for acceleration and velocity.
 
-[IMPORTANT] 
+[IMPORTANT]
 In order to use test this axis you have to manually enable the axis if this
 is required. If your driver has a charge pump you will have to bypass it.
 Test this axis does not react to limit switch inputs. Use with caution.
@@ -331,7 +340,7 @@ reduce it by 10% and use that as the axis Maximum Acceleration.
 
 .Spindle Configuration Page[[cap:Spindle-Configuration-Page]]
 
-image::images/stepconf-spindle.png[align="center"]
+image::stepconf-spindle.png[align="center"]
 
 This page only appears when 'Spindle PWM' is chosen in the
 'Parallel Port Pinout' page for one of the outputs.
@@ -353,7 +362,7 @@ values are not known, they can be determined. For more information see
 === Spindle-synchronized motion[[sub:Spindle-synchronized-motion-lathe]]
 (((Spindle-synchronized motion)))(((Lathe Threading)))
 
-When the appropriate signals from a spindle encoder are connected to 
+When the appropriate signals from a spindle encoder are connected to
 Machinekit via HAL, Machinekit supports lathe threading.
 These signals are:
 
@@ -366,7 +375,7 @@ locations as the spindle turns.
 an offset from Spindle Phase A. The advantages to using both A and B are
 direction sensing, increased noise immunity, and increased resolution.
 
-If 'Spindle Phase A' and 'Spindle Index' appear 
+If 'Spindle Phase A' and 'Spindle Index' appear
 on the pinout, the following information should be entered:
 
 * 'Use Spindle-At-Speed' - With encoder feedback one can choose to have machinekit
@@ -375,7 +384,7 @@ option and set the 'close enough' scale.
 
 * 'Speed Display Filter Gain' - Setting for adjusting the stability of the
 visual spindle speed display.
- 
+
 * 'Cycles per revolution' - The number of cycles of the 'Spindle A' signal
 during one revolution of the spindle. This option is only enabled when an
 input has been set to 'Spindle Phase A'
@@ -422,7 +431,7 @@ then find the PWM values that give 1600 RPM (40%) and 2800 RPM (70%).
 
 .Advanced Configuration[[cap:Advanced-Configuration]]
 
-image::images/stepconf-advanced.png[align="center"]
+image::stepconf-advanced.png[align="center"]
 
 * 'Include Halui' - This will add the Halui user interface component. See the
 Integrator Manual for more information on Halui.
@@ -440,7 +449,7 @@ is usually only useful if you have presettable tools.
 
 == Machine Configuration Complete[[sub:Machine-Configuration-Complete]]
 
-Click 'Apply' to write the configuration files. 
+Click 'Apply' to write the configuration files.
 Later, you can re-run this program and tweak the settings you entered before.
 
 == Axis Travel, Home Location, and Home Switch Location[[sec:Axis-Travel-Home]]
@@ -450,7 +459,7 @@ For each axis, there is a limited range of travel.
 The physical end of travel is called the 'hard stop'.
 
 Before the 'hard stop' there is a 'limit switch'.
-If the limit switch is encountered during normal operation, 
+If the limit switch is encountered during normal operation,
 Machinekit shuts down the motor amplifier.
 The distance between the 'hard stop' and 'limit switch'
 must be long enough to allow an unpowered motor to coast to a stop.
@@ -461,14 +470,14 @@ If a MDI command or g code program would pass the soft limit, it is not executed
 If a jog would pass the soft limit, it is terminated at the soft limit.
 
 The 'home switch' can be placed anywhere within the travel (between hard stops).
-As long as external hardware does not deactivate the motor amplifiers 
+As long as external hardware does not deactivate the motor amplifiers
 when the limit switch is reached, one of the limit switches
 can be used as a home switch.
 
 The 'zero position' is the location on the axis that is 0 in
 the machine coordinate system.
 Usually the 'zero position' will be within the 'soft limits'.
-On lathes, constant surface speed mode requires that machine 'X=0' 
+On lathes, constant surface speed mode requires that machine 'X=0'
 correspond to the center of spindle rotation when no tool offset is in effect.
 
 The 'home position' is the location within travel that the axis will
@@ -506,7 +515,7 @@ while there are as many as 9 switches on a 3-axis machine.
 Instead, multiple switches are wired together in various
 ways so that a smaller number of inputs are required.
 
-The figures below show the general idea of wiring multiple switches 
+The figures below show the general idea of wiring multiple switches
 to a single input pin.
 In each case, when one switch is actuated,
 the value seen on INPUT goes from logic HIGH to LOW.
@@ -522,13 +531,13 @@ Typically for a parallel port you might use 47k.
 
 Wiring N/C switches in series (simplified diagram)
 
-image::images/switch-nc-series.png[align="center"]
+image::switch-nc-series.png[align="center"]
 
 .Normally Open Switches[[cap:Normally-Open-Switches]]
 
 Wiring N/O switches in parallel (simplified diagram)
 
-image::images/switch-no-parallel.png[align="center"]
+image::switch-no-parallel.png[align="center"]
 
 The following combinations of switches are permitted in Stepconf:
 
@@ -539,5 +548,3 @@ The following combinations of switches are permitted in Stepconf:
 * Combine one limit switch and the home switch for one axis
 
 // vim: set syntax=asciidoc:
-
-
