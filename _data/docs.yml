@@ -1,7 +1,7 @@
 - title: Documentation
   docs:
+    - index-user
     - index-getting-started
     - index-HAL
-    - index-user
     - index-integrator
     - index-developer

@@ -1,14 +1,14 @@
 == Introduction
 
-link:../src/code/Code_Notes[Code_Notes]
+include::code/Code_Notes[Code_Notes]
 
-link:../src/code/NML_Messages[NML_Messages]
+include::code/NML_Messages[NML_Messages]
 
-link:../src/code/Style_Guide[Style_Guide]
+include::code/Style_Guide[Style_Guide]
 
-link:../src/common/Glossary[Glossary]
+include::common/Glossary[Glossary]
 
-link:../src/common/GPLD_Copyright[GPLD_Copyrigh]
+include::common/GPLD_Copyright[GPLD_Copyrigh]
 
 == Machinekit How To
 

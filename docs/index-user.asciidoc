@@ -1,65 +1,69 @@
-:leveloffset: 1
+:leveloffset: +1
 
 = Machinekit Introduction
 
-:leveloffset: 1
+:leveloffset: +1
 
-link:../src/common/user_intro[User Introduction]
+include:common/user_intro[User Introduction]
 
-link:../src/common/User_Concepts[User Concepts]
+include:common/User_Concepts[User Concepts]
 
-:leveloffset: 0
+:leveloffset: -1
 
 = User Interfaces
 
-:leveloffset: 1
+:leveloffset: +1
 
-link:../src/gui/selector[Configuration Selector]
+include:gui/selector[Configuration Selector]
 
-link:../src/gui/axis[Axis]
+include:gui/axis[Axis]
 
-link:../src/gui/ngcgui[ngcgui]
+include:gui/ngcgui[ngcgui]
 
-link:../src/gui/gmoccapy[gmoccapy]
+include:gui/gmoccapy[gmoccapy]
 
-link:../src/gui/touchy[touchy]
+include:gui/touchy[touchy]
 
-link:../src/gui/tklinuxcnc[tklinuxcnc]
+include:gui/tklinuxcnc[tklinuxcnc]
 
-link:../src/gui/mini[mini]
+include:gui/mini[mini]
 
-link:../src/gui/keystick[keystick]
+include:gui/keystick[keystick]
 
-:leveloffset: 0
+:leveloffset: -1
 
 = Using Machinekit
 
-:leveloffset: 1
+:leveloffset: +1
 
-link:../src/gcode/machining_center[Machining Center]
+include:gcode/machining_center[Machining Center]
 
-link:../src/gcode/coordinates[Coordinates]
+include:gcode/coordinates[Coordinates]
 
-link:../src/gcode/tool_compensation[Tool Compensation]
+include:gcode/tool_compensation[Tool Compensation]
 
-link:../src/gcode/overview[Gcode Overview]
+include:gcode/overview[Gcode Overview]
 
-link:../src/gcode/gcode[GCode]
+include:gcode/gcode[GCode]
 
-link:../src/gcode/m-code[M Codes]
+include:gcode/m-code[M Codes]
 
-link:../src/gcode/o-code[O codes]
+include:gcode/o-code[O codes]
 
-link:../src/gcode/other-code[Other Codes]
+include:gcode/other-code[Other Codes]
 
-link:../src/examples/gcode[Gcode Examples]
+include:examples/gcode[Gcode Examples]
 
-link:../src/lathe/lathe-user[Lathe User]
+include:lathe/lathe-user[Lathe User]
 
-link:../src/gcode/rs274ngc[rs474ngc]
+include:gcode/rs274ngc[rs474ngc]
 
-link:../src/gui/image-to-gcode[image2gcode]
+include:gui/image-to-gcode[image2gcode]
 
-link:../src/common/Glossary[Glossary]
+include:common/Glossary[Glossary]
 
-link:../src/common/GPLD_Copyright[GPLD_Copyright]
+include:common/GPLD_Copyright[GPLD_Copyright]
+
+:leveloffset: -1
+
+:leveloffset: -1
