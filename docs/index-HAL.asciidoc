@@ -2,7 +2,7 @@
 
 :toc:
 
-= Hardware Abstract Layer
+= Hardware Abstraction Layer
 
 :toc:
 
