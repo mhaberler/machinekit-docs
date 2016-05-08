@@ -31,13 +31,7 @@ Step by Step Instructions
 
 .Entry Page[[cap:Entry-Page]]
 
-[NOTE]
-====
-TODO, fix this picture in the source
-
 image::stepconf-config.png[align="center"]
-
-====
 
 * 'Create New' - Creates a fresh configuration.
 

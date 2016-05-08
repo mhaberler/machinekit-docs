@@ -39,7 +39,13 @@ Step by Step Instructions
 
 .PnCConf Splash
 
+[NOTE]
+====
+TODO, fix this picture in the source
+
 image::pncconf-splash.png[]
+
+====
 
 == Create or Edit
 
