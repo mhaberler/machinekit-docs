@@ -1,12 +1,16 @@
 :leveloffset: +1
 
+:toc:
+
 = Machinekit Introduction
+
+:toc:
 
 :leveloffset: +1
 
-include:common/user_intro[User Introduction]
+include::common/user_intro.asciidoc[User Introduction]
 
-include:common/User_Concepts[User Concepts]
+include::common/User_Concepts.asciidoc[User Concepts]
 
 :leveloffset: -1
 
@@ -14,21 +18,21 @@ include:common/User_Concepts[User Concepts]
 
 :leveloffset: +1
 
-include:gui/selector[Configuration Selector]
+include::gui/selector.asciidoc[Configuration Selector]
 
-include:gui/axis[Axis]
+include::gui/axis.asciidoc[Axis]
 
-include:gui/ngcgui[ngcgui]
+include::gui/ngcgui.asciidoc[ngcgui]
 
-include:gui/gmoccapy[gmoccapy]
+include::gui/gmoccapy.asciidoc[gmoccapy]
 
-include:gui/touchy[touchy]
+include::gui/touchy.asciidoc[touchy]
 
-include:gui/tklinuxcnc[tklinuxcnc]
+include::gui/tklinuxcnc.asciidoc[tklinuxcnc]
 
-include:gui/mini[mini]
+include::gui/mini.asciidoc[mini]
 
-include:gui/keystick[keystick]
+include::gui/keystick.asciidoc[keystick]
 
 :leveloffset: -1
 
@@ -36,33 +40,33 @@ include:gui/keystick[keystick]
 
 :leveloffset: +1
 
-include:gcode/machining_center[Machining Center]
+include::gcode/machining_center.asciidoc[Machining Center]
 
-include:gcode/coordinates[Coordinates]
+include::gcode/coordinates.asciidoc[Coordinates]
 
-include:gcode/tool_compensation[Tool Compensation]
+include::gcode/tool_compensation.asciidoc[Tool Compensation]
 
-include:gcode/overview[Gcode Overview]
+include::gcode/overview.asciidoc[Gcode Overview]
 
-include:gcode/gcode[GCode]
+include::gcode/gcode.asciidoc[GCode]
 
-include:gcode/m-code[M Codes]
+include::gcode/m-code.asciidoc[M Codes]
 
-include:gcode/o-code[O codes]
+include::gcode/o-code.asciidoc[O codes]
 
-include:gcode/other-code[Other Codes]
+include::gcode/other-code.asciidoc[Other Codes]
 
-include:examples/gcode[Gcode Examples]
+include::examples/gcode.asciidoc[Gcode Examples]
 
-include:lathe/lathe-user[Lathe User]
+include::lathe/lathe-user.asciidoc[Lathe User]
 
-include:gcode/rs274ngc[rs474ngc]
+include::gcode/rs274ngc.asciidoc[rs474ngc]
 
-include:gui/image-to-gcode[image2gcode]
+include::gui/image-to-gcode.asciidoc[image2gcode]
 
-include:common/Glossary[Glossary]
+include::common/Glossary.asciidoc[Glossary]
 
-include:common/GPLD_Copyright[GPLD_Copyright]
+include::common/GPLD_Copyright.asciidoc[GPLD_Copyright]
 
 :leveloffset: -1
 

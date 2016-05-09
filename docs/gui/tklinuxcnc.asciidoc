@@ -1,3 +1,6 @@
+
+:imagesdir: gui/images
+
 = TkLinuxcnc GUI
 
 [[cha:tklinuxcnc-gui]] (((TkLinuxcnc GUI)))
@@ -12,7 +15,7 @@ shown.
 
 .TkLinuxcnc Window[[cap:TkLinuxcnc-Window]]
 
-image::images/tkemc.png[align="center"]
+image::tkemc.png[align="center"]
 
 == Getting Started
 
@@ -51,7 +54,7 @@ The TkLinuxcnc window contains the following elements:
   start/stop spindle and other relevant I/O
 * Status bar for various offset related displays
 * Coordinate display area
-* A set of sliders which control 'Jogging speed', 'Feed Override' 
+* A set of sliders which control 'Jogging speed', 'Feed Override'
   , and 'Spindle speed Override' which allow you to increase or
   decrease those settings
 * Manual data input text box 'MDI'
@@ -63,7 +66,7 @@ The TkLinuxcnc window contains the following elements:
 
 From left to right, the buttons are:
 
-* Machine enable: 'ESTOP' > 'ESTOP RESET' > 'ON' 
+* Machine enable: 'ESTOP' > 'ESTOP RESET' > 'ON'
 * Toggle mist coolant
 * Decrease spindle speed
 *  Set spindle direction 'SPINDLE OFF' > 'SPINDLE FORWARD' .
@@ -130,7 +133,7 @@ optional stop switch (if the button is green the program execution will
 be stopped on any M1 encountered).
 
 .TkLinuxcnc Interpreter / program control[[cap:TkLinuxcnc-Interpreter]]
-image::images/tkemc-interp.png[align="center"]
+image::tkemc-interp.png[align="center"]
 
 ==== Text Program Display Area
 
@@ -145,8 +148,8 @@ show the current line.
 TkLinuxcnc allows you to manually move the machine. This action is known as
 'jogging'. First, select the axis to be moved by clicking it. Then,
 click and hold the '+' or '-' button depending on the desired direction
-of motion. The first four axes can also be moved by the keyboard arrow keys 
-(X and Y), the PAGE UP and PAGE DOWN keys (Z) and the '[' and ']' keys (A/4th). 
+of motion. The first four axes can also be moved by the keyboard arrow keys
+(X and Y), the PAGE UP and PAGE DOWN keys (Z) and the '[' and ']' keys (A/4th).
 
 If 'Continuous' is selected, the motion will continue as long as the
 button or key is pressed. If another value is selected, the machine
@@ -167,7 +170,7 @@ color).
 
 .TkLinuxcnc Override Limits & Jogging increments example[[cap:Override-Limits]]
 
-image::images/tkemc-override-limits.png[align="center"]
+image::tkemc-override-limits.png[align="center"]
 
 ==== The Spindle group
 
@@ -192,7 +195,7 @@ on, and not set to MDI mode, the code entry controls are unavailable.
 
 .The Code Entry tab[[cap:The-Code-Entry]]
 
-image::images/tkemc-mdi.png[align="center"]
+image::tkemc-mdi.png[align="center"]
 
 ==== MDI:
 
@@ -205,7 +208,7 @@ This shows the 'modal codes' that are active in the interpreter. For
 instance, 'G54' indicates that the 'G54 offset' is applied to all
 coordinates that are entered.
 
-=== Jog Speed 
+=== Jog Speed
 
 By moving this slider, the speed of jogs can be modified. The numbers
 above refer to axis units / second. The text box with the number is
@@ -258,5 +261,3 @@ following table.
 |[, ] | Jog fourth axis
 |ESC | Stop execution
 |========================================
-
-

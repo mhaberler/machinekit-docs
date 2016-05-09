@@ -1,3 +1,6 @@
+
+:imagesdir: gui/images
+
 = Touchy GUI
 
 [[cha:touchy-gui]] (((Touchy GUI)))
@@ -10,14 +13,14 @@ with a wheel/MPG and a few buttons and switches.
 
 .Touchy
 
-image::images/touchy.png[]
+image::touchy.png[]
 
 == Panel Configuration
 
 === HAL connections
 
 Touchy requires that you create a file named 'touchy.hal' in your
-configuration directory (the directory your ini file is in) to 
+configuration directory (the directory your ini file is in) to
 connect its controls. Touchy executes the HAL commands in this file
 after it has made its own pins available for connection.
 
@@ -30,8 +33,8 @@ motion controller to control wheel jogging:
  - 'touchy.jog.wheel.N', which is to be connected to 'axis.N.jog-enable'
 	for each axis N.
 
- - In addition to being connected to 'touchy.wheel-counts', the wheel counts 
-	should also be connected to 'axis.N.jog-counts' for 
+ - In addition to being connected to 'touchy.wheel-counts', the wheel counts
+	should also be connected to 'axis.N.jog-counts' for
 	each axis N.  If you use HAL component 'ilowpass' to smooth wheel jogging, be
 	sure to smooth only 'axis.N.jog-counts' and not 'touchy.wheel-counts'.
 
@@ -73,7 +76,7 @@ When you start Touchy the first time, check the Preferences tab.
 If using a touchscreen, choose the option to hide the pointer for
 best results.
 
-The Status Window is a fixed height, set by the size of a fixed font. 
+The Status Window is a fixed height, set by the size of a fixed font.
 This can be affected by the Gnome DPI, configured in System /
 Preferences / Appearance / Fonts / Details. If the bottom of the screen is
 cut off, reduce the DPI setting.
