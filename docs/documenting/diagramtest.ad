@@ -1,0 +1,183 @@
+---
+layout: docs
+---
+
+== Foo!
+
+docdir = {docdir}
+
+:imagesdir: {docdir}/docs/documenting/images
+
+imagesdir = {imagesdir}
+
+This is a demo page for the asciidoctor-diagram plugin.
+
+== ditaa diagram:
+
+[ditaa, "ditaa-test"]
+----
+                   +-------------+
+                   | asciidoctor |-------+
+                   |  diagram    |       |
+                   +-------------+       | png out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ asciidoctor +--> |               |
+ |  Text  |   +-------------+    |Beatiful output|
+ |Document|   |   !magic!   |    |               |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+----
+
+== Graphviz example:
+
+[graphviz, "dot_example", "svg"]
+----
+graph ethane {
+     C_0 -- H_0 [type=s];
+     C_0 -- H_1 [type=s];
+     C_0 -- H_2 [type=s];
+     C_0 -- C_1 [type=s];
+     C_1 -- H_3 [type=s];
+     C_1 -- H_4 [type=s];
+     C_1 -- H_5 [type=s];
+}
+----
+
+
+## blockdiag example:
+
+[blockdiag, "blockdiag_example", "svg"]
+----
+blockdiag {
+   A -> B -> C -> D;
+   A -> E -> F -> G;
+}
+----
+
+== actdiag example:
+
+[actdiag, "actdiag_example"]
+----
+actdiag {
+  write -> convert -> image
+
+  lane user {
+     label = "User"
+     write [label = "Writing reST"];
+     image [label = "Get diagram IMAGE"];
+  }
+  lane actdiag {
+     convert [label = "Convert reST to Image"];
+  }
+}
+----
+
+== nwdiag example:
+
+[nwdiag, "nwdiag_example"]
+----
+nwdiag {
+  network dmz {
+      address = "210.x.x.x/24"
+
+      web01 [address = "210.x.x.1"];
+      web02 [address = "210.x.x.2"];
+  }
+  network internal {
+      address = "172.x.x.x/24";
+
+      web01 [address = "172.x.x.1"];
+      web02 [address = "172.x.x.2"];
+      db01;
+      db02;
+  }
+}
+----
+
+== graphviz example:
+
+["graphviz", "graphviz_example", "png"]
+---------------------------------------------------------------------
+digraph automata_0 {
+  size ="8.5, 11";
+  node [shape = circle];
+  0 [ style = filled, color=lightgrey ];
+  2 [ shape = doublecircle ];
+  0 -> 2 [ label = "a " ];
+  0 -> 1 [ label = "other " ];
+  1 -> 2 [ label = "a " ];
+  1 -> 1 [ label = "other " ];
+  2 -> 2 [ label = "a " ];
+  2 -> 1 [ label = "other " ];
+  "Machine: a" [ shape = plaintext ];
+}
+---------------------------------------------------------------------
+
+[source,ruby,linenums]
+----
+ORDERED_LIST_KEYWORDS = {
+  'loweralpha' => 'a',
+  'lowerroman' => 'i',
+  'upperalpha' => 'A',
+  'upperroman' => 'I'
+   #'lowergreek' => 'a'
+   #'arabic'     => '1'
+   #'decimal'    => '1'
+}
+----
+
+[source,python]
+----
+def foo(bar):
+    pass    # a comment
+----
+
+
+// == wavedrom example:
+
+// ["wavedrom", "wavedrom_example", "svg"]
+// ---------------------------------------------------------------------
+// { signal: [
+//   {    name: 'clk',   wave: 'p..Pp..P'},
+//   ['Master',
+//     ['ctrl',
+//       {name: 'write', wave: '01.0....'},
+//       {name: 'read',  wave: '0...1..0'}
+//     ],
+//     {  name: 'addr',  wave: 'x3.x4..x', data: 'A1 A2'},
+//     {  name: 'wdata', wave: 'x3.x....', data: 'D1'   },
+//   ],
+//   {},
+//   ['Slave',
+//     ['ctrl',
+//       {name: 'ack',   wave: 'x01x0.1x'},
+//     ],
+//     {  name: 'rdata', wave: 'x.....4x', data: 'Q2'},
+//   ]
+// ]}
+// ---------------------------------------------------------------------
+
+== Alt Pygments theme
+:source-highlighter: pygments
+:pygments-style: manni
+
+Regular text
+
+[source,ruby]
+----
+ORDERED_LIST_KEYWORDS = {
+  'loweralpha' => 'a',
+  'lowerroman' => 'i',
+  'upperalpha' => 'A',
+  'upperroman' => 'I'
+   #'lowergreek' => 'a'
+   #'arabic'     => '1'
+   #'decimal'    => '1'
+}
+----
