@@ -31,7 +31,7 @@
 |<<sec:M71-Invalidate-Stored-Modal-State,M71>> | Invalidate Stored Modal State
 |<<sec:M72-Restore-Modal-State,M72>>           | Restore Modal State
 |<<sec:M73-Save-Autorestore-Modal-State,M73>>  | Save Autorestore Modal State
-|<<sec:M100-to-M199,M100-M199>>                | User Defined M-Codes 
+|<<sec:M100-to-M199,M100-M199>>                | User Defined M-Codes
 |========================================
 
 
@@ -53,7 +53,7 @@
 [NOTE]
 It is OK to program 'M0' and 'M1' in MDI mode,
 but the effect will probably not be noticeable,
-because normal behavior in MDI mode is 
+because normal behavior in MDI mode is
 to stop after each line of input anyway.
 
 [[sec:M2-M30]]
@@ -62,7 +62,7 @@ to stop after each line of input anyway.
 
 * 'M2' - end the program. Pressing cycle start will
          start the program at the beginning of the file.
-         
+
 * 'M30' - exchange pallet shuttles and end the program.
           Pressing cycle start will start the program
           at the beginning of the file.
@@ -131,7 +131,7 @@ to the tool most recently selected (using a T word - see Section
 <<sec:T-Select-Tool,Select Tool>>), program 'M6'.
 When the tool change is complete:
 
-* The spindle will be stopped. 
+* The spindle will be stopped.
 * The tool that was selected (by a T word on the same line or on any
    line after the previous tool change) will be in the spindle.
 * If the selected tool was not in the spindle before the tool change,
@@ -147,7 +147,7 @@ When the tool change is complete:
 The tool length offset is not changed by 'M6', use 'G43' after the
 'M6' to change the tool length offset.
 
-The tool change may include axis motion. 
+The tool change may include axis motion.
 It is OK (but not useful) to program a change to the tool already in the spindle.
 It is OK if there is no tool in the selected slot;
 in that case, the spindle will be empty after the tool change.
@@ -197,26 +197,26 @@ ORIENT_OFFSET = 0-360 (fixed offset in degrees added to M19 R word)
 HAL Pins
 
 * 'motion.spindle-orient-angle' (out float)
-Desired spindle orientation for M19. Value of the M19 R word parameter 
+Desired spindle orientation for M19. Value of the M19 R word parameter
 plus the value of the [RS274NGC]ORIENT_OFFSET ini parameter.
 
 * 'motion.spindle-orient-mode' (out s32)
 Desired spindle rotation mode. Reflects M19 P parameter word, Default = 0
 
 * 'motion.spindle-orient' (out bit)
-Indicates start of spindle orient cycle. Set by M19. Cleared by any of 
+Indicates start of spindle orient cycle. Set by M19. Cleared by any of
 M3,M4,M5.
-  If spindle-orient-fault is not zero during spindle-orient true, the 
+  If spindle-orient-fault is not zero during spindle-orient true, the
 M19 command fails with an error message.
 
 * 'motion.spindle-is-oriented' (in bit)
-Acknowledge pin for spindle-orient. Completes orient cycle. If 
+Acknowledge pin for spindle-orient. Completes orient cycle. If
 spindle-orient was true when spindle-is-oriented
-  was asserted, the spindle-orient pin is cleared and the spindle-locked 
+  was asserted, the spindle-orient pin is cleared and the spindle-locked
 pin is asserted. Also, the spindle-brake pin is asserted.
 
 * 'motion.spindle-orient-fault' (in s32)
-  Fault code input for orient cycle. Any value other than zero will 
+  Fault code input for orient cycle. Any value other than zero will
 cause the orient cycle to abort.
 
 * 'motion.spindle-locked' (out bit)
@@ -230,8 +230,8 @@ Spindle orient complete pin. Cleared by any of M3,M4,M5.
 * 'M48' - enable the spindle speed and feed rate override controls.
 * 'M49' - disable both controls.
 
-It is OK to enable or disable the controls when 
-they are already enabled or disabled. 
+It is OK to enable or disable the controls when
+they are already enabled or disabled.
 See the <<sub:feed-rate,Feed Rate>> Section for more details.
 
 [[sec:M50-Feed-Override]]
@@ -239,9 +239,9 @@ See the <<sub:feed-rate,Feed Rate>> Section for more details.
 (((M50 Feed Override Control)))
 
 * 'M50 <P1>' - enable the feed rate override control. The P1
-               is optional. 
+               is optional.
 * 'M50 P0' - disable the feed rate control.
- 
+
 While disabled the feed override will have no influence,
 and the motion will be executed at programmed feed rate.
 (unless there is an adaptive feed rate override active).
@@ -251,7 +251,7 @@ and the motion will be executed at programmed feed rate.
 (((M51 Spindle Speed Override)))
 
 * 'M51 <P1>' - enable the spindle speed override control. The P1
-               is optional. 
+               is optional.
 * 'M51 P0' - disable the spindle speed override control program.
              While disabled the spindle speed override will have
              no influence, and the spindle speed will have the
@@ -264,7 +264,7 @@ and the motion will be executed at programmed feed rate.
 
 * 'M52 <P1>' - use an adaptive feed. The P1 is optional.
 * 'M52 P0' - stop using adaptive feed.
- 
+
 When adaptive feed is enabled, some external input value is used together
 with the user interface feed override value and the commanded feed rate
 to set the actual feed rate. In Machinekit, the HAL pin 'motion.adaptive-feed'
@@ -373,7 +373,7 @@ inputs are not monitored in real time and thus should not be used for
 timing-critical applications.
 
 The number of I/O can be increased by using the num_dio or num_aio parameter
-when loading the motion controller. See the Integrator's Manual, Core 
+when loading the motion controller. See the Integrator's Manual, Core
 Components Section, Motion subsection, for more information.
 
 [NOTE]
@@ -403,8 +403,8 @@ program a motion G code (G0, G1, etc) right after the M67. M67 functions
 the same as M62-63.
 
 The number of I/O can be increased by using the num_dio or num_aio parameter
-when loading the motion controller. See the Integrator's Manual, Core 
-Components Section, Motion subsection, for more information. 
+when loading the motion controller. See the Integrator's Manual, Core
+Components Section, Motion subsection, for more information.
 
 [NOTE]
 M67 will not function unless the appropriate motion.analog-out-nn pins are
@@ -426,7 +426,7 @@ controller. They are not synchronized with movement, and they will
 break blending. M68 functions the same as M64-65.
 
 The number of I/O can be increased by using the num_dio or num_aio parameter
-when loading the motion controller. See the Integrator's Manual, Core 
+when loading the motion controller. See the Integrator's Manual, Core
 Components Section, Motion subsection, for more information.
 
 [NOTE]
@@ -719,7 +719,7 @@ eog /home/john/machinekit/nc_files/message.png
 exit 0
 ----
 
-To display a graphic message and continue processing the G code file 
+To display a graphic message and continue processing the G code file
 suffix an ampersand to the command.
 
 .M110 Example display and keep going

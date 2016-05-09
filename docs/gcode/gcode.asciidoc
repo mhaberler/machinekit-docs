@@ -1,3 +1,6 @@
+
+:imagesdir: gcode/images
+
 = G Codes
 
 [[cha:g-codes]] (((G Codes)))
@@ -104,7 +107,7 @@ as the 'L number', and so on for any other letter.
 |<<sec:G93-G94-G95-Mode,G93 G94 G95>> |Feed Modes
 |<<sec:G96-G97-Spindle,G96>>        |Constant Surface Speed
 |<<sec:G96-G97-Spindle,G97>>        |RPM Mode
-|<<sec:G98-G99-Set,G98 G99>>        |Canned Cycle Z Retract Mode 
+|<<sec:G98-G99-Set,G98 G99>>        |Canned Cycle Z Retract Mode
 |====================================================================
 
 [[sec:G0]]
@@ -203,7 +206,7 @@ G2 or G3 offsets <P-> (full circles)
 ----
 
 A circular or helical arc is specified using either 'G2' (clockwise
-arc) or 'G3' (counterclockwise arc) at the current 
+arc) or 'G3' (counterclockwise arc) at the current
 <<sec:F-feed-rate,feed rate>>. The direction (CW, CCW) is as viewed from the
 positive end of the axis about which the circular motion occurs.
 
@@ -219,7 +222,7 @@ it lies in a plane parallel to the selected plane.
 To program a helix, include the axis word perpendicular to the arc
 plane: for example, if in the 'G17' plane, include a 'Z' word. This
 will cause the 'Z' axis to move to the programmed value during the
-circular 'XY' motion. 
+circular 'XY' motion.
 
 To program an arc that gives more than one full turn, use the 'P' word
 specifying the number of full turns plus the programmed arc. The 'P' word
@@ -326,7 +329,7 @@ It is an error if:
 
 * When the arc is projected on the selected plane, the distance from
   the current point to the center differs from the distance from the end
-  point to the center by more than (.05 inch/.5 mm) 
+  point to the center by more than (.05 inch/.5 mm)
   OR ((.0005 inch/.005mm) AND .1% of radius).
 
 Deciphering the Error message 'Radius to end of arc differs from radius to start:'
@@ -361,7 +364,7 @@ G2 X1 Y1 I1 F10 (clockwise arc in the XY plane)
 
 .G2 Example[[fig:G2-Example]]
 
-image::images/g2.png[align="center"]
+image::g2.png[align="center"]
 
 In the next example we see the difference between the offsets for Y if
 we are doing a G2 or a G3 move. For the G2 move the start position is
@@ -379,7 +382,7 @@ G3 X0 Y0 I1 J-0.5 F25 (counterclockwise arc in the XY plane)
 
 .G2-G3 Example[[fig:G2-G3-Example]]
 
-image::images/g2-3.png[align="center"]
+image::g2-3.png[align="center"]
 
 .G2 Example Line
 [source,{ngc}]
@@ -541,7 +544,7 @@ M2
 
 .Sample NURBs Output
 
-image:images/nurbs01.png[align="center"]
+image::nurbs01.png[align="center"]
 
 More information on NURBs can be found here:
 
@@ -672,7 +675,7 @@ G10 L2 P1 X3.5 Y17.2
 ----
 
 In the above example the origin of the first coordinate system
-(the one selected by 'G54') is set to be X=3.5 and Y=17.2. 
+(the one selected by 'G54') is set to be X=3.5 and Y=17.2.
 Because only X and Y are specified, the origin point is only moved in X and Y;
 the other coordinates are not changed.
 
@@ -820,9 +823,9 @@ of each G code file.
 Only use G28 when your machine is homed to a repeatable position and the
 desired G28 position has been stored with G28.1.
 
-G28 uses the values stored in <<sub:numbered-parameters,parameters>> 
+G28 uses the values stored in <<sub:numbered-parameters,parameters>>
 5161-5166 as the X Y Z A B C U V W final point to move to. The parameter
-values are 'absolute' machine coordinates in the native machine 'units' as 
+values are 'absolute' machine coordinates in the native machine 'units' as
 specifed in the ini file. All axes defined in the ini file will be moved when
 a G28 is issued.
 
@@ -1153,7 +1156,7 @@ G42.1 D- <L-> (right of programmed path)
 * 'L' - tool orientation (see <<lathe-tool-orientation,lathe tool orientation>>)
 
 G41.1 & G42.1 function the same as G41 & G42 with the added scope of being able
-to program the tool diameter. The L word defaults to 0 if unspecified. 
+to program the tool diameter. The L word defaults to 0 if unspecified.
 
 It is an error if:
 
@@ -1254,7 +1257,7 @@ G53 axes
 To move in the machine coordinate system, program 'G53'
 on the same line as a linear move. 'G53' is not modal and must be
 programmed on each line. 'G0' or 'G1' does not have to be programmed
-on the same line if one is currently active. 
+on the same line if one is currently active.
 For example 'G53 G0 X0 Y0 Z0' will move the axes to the home
 position even if the currently
 selected coordinate system has offsets in effect.
@@ -1268,7 +1271,7 @@ G53 X2 (rapid linear move to absolute coordinate X2)
 
 It is an error if:
 
-* G53 is used without G0 or G1 being active, 
+* G53 is used without G0 or G1 being active,
 * or G53 is used while cutter compensation is on.
 
 [[sec:G54-G59_3]]
@@ -1293,7 +1296,7 @@ in the parameters shown in the following table.
 
 [width="80%", options="header", cols="<,11*^"]
 |============================================================
-|Select|CS|X   |Y   |Z   |A   |B   |C   |U   |V   |W   |R   
+|Select|CS|X   |Y   |Z   |A   |B   |C   |U   |V   |W   |R
 |G54   |1 |5221|5222|5223|5224|5225|5226|5227|5228|5229|5230
 |G55   |2 |5241|5242|5243|5244|5245|5246|5247|5248|5249|5250
 |G56   |3 |5261|5262|5263|5264|5265|5266|5267|5268|5269|5270
@@ -1329,7 +1332,7 @@ systems.
 G64 <P- <Q->>
 ----
 * 'P' - motion blending tolerance
-* 'Q' - naive cam tolerance 
+* 'Q' - naive cam tolerance
 
 * 'G64' - best possible speed.
 * 'G64 P- <Q- >' blending with tolerance.
@@ -1370,7 +1373,7 @@ of each G code file.
 (((G73 Drilling Cycle Chip Break)))
 
 ----
-G73 X- Y- Z- R- Q- <L-> 
+G73 X- Y- Z- R- Q- <L->
 ----
 * 'R' - retract position along the Z axis.
 * 'Q' - delta increment along the Z axis.
@@ -1405,7 +1408,7 @@ G76 P- Z- I- J- R- K- Q- H- E- L-
 
 .G76 Threading[[fig:G76-Threading]]
 
-image::images/g76-threads.png[align="center"]
+image::g76-threads.png[align="center"]
 
 
 * 'Drive Line' - A line through the initial X position parallel to the Z.
@@ -1521,7 +1524,7 @@ are the cutting moves.
 
 .G76 Example[[fig:G76-Threading-Example]]
 
-image::images/g76-01.png[align="center"]
+image::g76-01.png[align="center"]
 
 [[sec:G80-G89]]
 == Canned Cycles
@@ -1606,7 +1609,7 @@ If the XY plane is active, the Z number is sticky, and it is an error
 if:
 
 * the Z number is missing and the same canned cycle was not already
-   active, 
+   active,
 * or the R number is less than the Z number.
 
 If other planes are active, the error conditions are analogous to the
@@ -1659,7 +1662,7 @@ The G98 to the second line above means that the return move will be to
 the value of Z in the first line since it is higher that the R value
 specified.
 
-image::images/eight.png[align="center"]
+image::eight.png[align="center"]
 
 
 .Twelve Holes in a Square
@@ -1683,7 +1686,7 @@ Z0
 M2 (program end)
 ----
 
-image::images/twelve.png[align="center"]
+image::twelve.png[align="center"]
 
 The second reason to use a canned cycle is that they all produce
 preliminary moves and returns that you can anticipate and control
@@ -1726,7 +1729,7 @@ mode G word.
 If a canned cycle is not turned off with G80 or another motion word, the
 canned cycle will attempt to repeat itself using the next block of code
 that contains an X, Y, or Z word. The following file drills (G81) a set
-of eight holes as shown in the following caption. 
+of eight holes as shown in the following caption.
 
 .G80 Example 1
 ----
@@ -1753,11 +1756,11 @@ Also, this is one of the few places where line numbers have some value,
 being able to point a reader to a specific line of code.
 
 .G80 Cycle[[cap:G80-Cycle]]
-    
-image::images/G81mult.png[align="center"]
+
+image::G81mult.png[align="center"]
 
 The use of G80 in line N200 is optional because the G0 on the next
-line will turn off the G81 cycle. But using the G80 as shown in 
+line will turn off the G81 cycle. But using the G80 as shown in
 Example 1, will provide for easier to read canned cycle. Without it, it
 is not so obvious that all of the blocks between N120 and N200 belong
 to the canned cycle.
@@ -1814,7 +1817,7 @@ The following moves take place:
 
 . a rapid move parallel to the Z-axis to (Z3)
 
-image::images/G81ex1.png[align="center"]
+image::G81ex1.png[align="center"]
 
 .Example 2 - Relative Position G81
 
@@ -1842,7 +1845,7 @@ The first repeat consists of 3 moves.
 
 . move parallel to the Z-axis at the <<sec:F-feed-rate,feed rate>> to (Z4.2)
 
-. a rapid move parallel to the Z-axis to (X5, Y7, Z4.8) 
+. a rapid move parallel to the Z-axis to (X5, Y7, Z4.8)
 
 The second repeat consists of 3 moves. The X position is reset to
  9 (=5+4) and the Y position to 12 (=7+5).
@@ -1851,7 +1854,7 @@ The second repeat consists of 3 moves. The X position is reset to
 
 . move parallel to the Z-axis at the feed rate to (X9, Y12, Z4.2)
 
-. a rapid move parallel to the Z-axis to (X9, Y12, Z4.8) 
+. a rapid move parallel to the Z-axis to (X9, Y12, Z4.8)
 
 The third repeat consists of 3 moves. The X position is reset to
  13 (=9+4) and the Y position to 17 (=12+5).
@@ -1862,7 +1865,7 @@ The third repeat consists of 3 moves. The X position is reset to
 
 . a rapid move parallel to the Z-axis to (X13, Y17, Z4.8)
 
-image::images/G81ex2.png[align="center"]
+image::G81ex2.png[align="center"]
 
 .Example 3 - Relative Position G81
 
@@ -1878,7 +1881,7 @@ nothing for the motion but since the initial value of Z is less than
 the value specified in R, there will be an initial Z move during the
 preliminary moves.
 
-image::images/G81.png[align="center"]
+image::G81.png[align="center"]
 
 .Example 4 - Absolute G81 R > Z
 
@@ -1893,7 +1896,7 @@ initial Z0 and R1.8 and rapid moves to that location. After that initial Z
 move, the repeat feature works the same as it did in example 3 with the
 final Z depth being 0.6 below the R value.
 
-image::images/G81a.png[align="center"]
+image::G81a.png[align="center"]
 
 .Example 5 - Relative position R > Z
 
@@ -1950,11 +1953,11 @@ of retracts during the drilling operation.
  . Preliminary motion, as described in the
    <<section:preliminary-motion,Preliminary and In-Between Motion>> section.
  . Move the Z-axis at the current <<sec:F-feed-rate,feed rate>> downward by
-   delta or to the Z position, whichever is less deep. 
+   delta or to the Z position, whichever is less deep.
  . Rapid move back out to the retract plane specified by the R word.
  . Rapid move back down to the current hole bottom, backed off a bit.
  . Repeat steps 2, 3, and 4 until the Z position is reached at step 2.
- . The Z-axis does a <<sec:G0,rapid move>> to clear Z. 
+ . The Z-axis does a <<sec:G0,rapid move>> to clear Z.
 
 It is an error if:
 
@@ -1982,9 +1985,9 @@ for drilling or milling.
    <<section:preliminary-motion,Preliminary and In-Between Motion>> section.
  . Move the Z-axis only at the current <<sec:F-feed-rate,feed rate>> to the Z
    position.
- . Retract the Z-axis at the current feed rate to the R plane if it is lower 
+ . Retract the Z-axis at the current feed rate to the R plane if it is lower
  than the initial Z.
- . Retract at the traverse rate to clear Z. 
+ . Retract at the traverse rate to clear Z.
 
 [[sec:G86-Boring-Rapid-Out]]
 == G86 Boring Cycle, Spindle Stop, Rapid Move Out
@@ -2004,7 +2007,7 @@ for the number of seconds to dwell.
  . Dwell for the P number of seconds.
  . Stop the spindle turning.
  . The Z-axis does a <<sec:G0,rapid move>> to clear Z.
- . Restart the spindle in the direction it was going. 
+ . Restart the spindle in the direction it was going.
 
 It is an error if:
 
@@ -2039,14 +2042,14 @@ where P specifies the number of seconds to dwell.
    <<section:preliminary-motion,Preliminary and In-Between Motion>> section.
  . Move the Z-axis only at the current <<sec:F-feed-rate,feed rate>> to the Z
    position.
- . Dwell for the P number of seconds. 
- . Retract the Z-axis at the current feed rate to clear Z. 
+ . Dwell for the P number of seconds.
+ . Retract the Z-axis at the current feed rate to clear Z.
 
 [[sec:G90-G91]]
 == G90, G91 Distance Mode
 (((G90, G91 Distance Mode)))
 
-* 'G90' - absolute distance mode In absolute 
+* 'G90' - absolute distance mode In absolute
   distance mode, axis numbers (X, Y, Z, A, B, C, U, V, W)
   usually represent positions in terms of the currently active
   coordinate system. Any exceptions to that rule are described
@@ -2078,7 +2081,7 @@ G0 X2.5 (rapid move 2.5 from current position along the X axis)
   When G90.1 is in effect I and J both must be specified with G2/3
   for the XY plane or J and K for the XZ plane or it is an error.
 
-* 'G91.1' - incremental distance mode for I, J & K offsets. G91.1 Returns 
+* 'G91.1' - incremental distance mode for I, J & K offsets. G91.1 Returns
   I, J & K to their default behavior.
 
 [[sec:G92]]
@@ -2195,7 +2198,7 @@ G97 (RPM Mode)
 * 'G96 D- S-' - selects constant surface speed of 'S' feet per minute
                 (if G20 is in effect) or meters per minute
                 (if G21 is in effect). D- is optional.
-+                
++
 When using G96, ensure that X0 in
 the current coordinate system (including offsets and tool lengths) is
 the center of rotation or Machinekit will not give the desired spindle speed.

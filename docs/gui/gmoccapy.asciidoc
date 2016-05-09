@@ -1,3 +1,6 @@
+
+:imagesdir: gui/images
+
 [[cha:gmoccapy]](((GUI, GMOCCAPY)))
 
 = GMOCCAPY
@@ -29,7 +32,7 @@ other users. At the Moment it is available in English, German, Spanish, Polish,
 Serbian and Hungarian. Feel free to help me to introduce more languages,
 *nieson@web.de*. If you need help, don't hesitate to ask.
 
-image::images/gmoccapy_4_axis.png[align="left"]
+image::gmoccapy_4_axis.png[align="left"]
 
 == Requirements
 
@@ -58,11 +61,11 @@ You will receive updates with the regular deb packages.
 You will get a similar screen to the following:
 The design may variate depending on your config.
 
-image::images/gmoccapy_3_axis.png[align="left"]
+image::gmoccapy_3_axis.png[align="left"]
 
 == Basic Configuration
 
-There is really not to much to configure just to run gmoccapy, but there are some points 
+There is really not to much to configure just to run gmoccapy, but there are some points
 you should take care off if you want to use all the features of the GUI.
 
 You will find the following INI files included, just to show the basics: +
@@ -83,10 +86,10 @@ The names should explain the main intention of the different INI Files. +
 
 If you use an existing configuration of your machine, just edit your INI according to this document. +
 
-IMPORTANT: If you want to use <<gmoccapy:macros,MACROS>>, don't forget to set the path to your macros or 
+IMPORTANT: If you want to use <<gmoccapy:macros,MACROS>>, don't forget to set the path to your macros or
 subroutines folder as described below.
 
-So let us take a closer look to the the INI file and what you need to include 
+So let us take a closer look to the the INI file and what you need to include
 to use gmoccapy on your machine: +
 
 [[gmoccapy:display-section]]
@@ -114,8 +117,8 @@ The most important part is to tell LinuxCNC to use gmoccapy, editing the [DISPLA
  PREFERENCE_FILE_PATH = gmoccapy_preferences
 
 The line PREFERENCE_FILE_PATH gives the location and name of the preferences file to be used.
-In most cases this line will not be needed, it is used by gmoccapy to store your settings of the GUI, 
-like themes, DRO units, colors, and keyboard settings, etc., see <<gmoccapy:settings-page,settings page>> for more details. 
+In most cases this line will not be needed, it is used by gmoccapy to store your settings of the GUI,
+like themes, DRO units, colors, and keyboard settings, etc., see <<gmoccapy:settings-page,settings page>> for more details.
 
 [NOTE]
 If no path or file is given, gmoccapy will use as default
@@ -267,23 +270,23 @@ Here are some examples:
 
 .ntb_user_tabs - with integrated camview program
 
-image::images/gmoccapy_ntb_user_tab.png[align="left"]
+image::gmoccapy_ntb_user_tab.png[align="left"]
 
 .ntb_preview - as maximized version
 
-image::images/gmoccapy_ntb_preview_maximized_2.png[align="left"]
+image::gmoccapy_ntb_preview_maximized_2.png[align="left"]
 
 .ntb_preview
 
-image::images/gmoccapy_ntb_preview.png[align="left"]
+image::gmoccapy_ntb_preview.png[align="left"]
 
 .box_left - showing gmoccapy in edit mode
 
-image::images/gmoccapy_with_left_box_in_edit_mode.png[align="left"]
+image::gmoccapy_with_left_box_in_edit_mode.png[align="left"]
 
 .box_right - and gmoccapy in MDI mode
 
-image::images/gmoccapy_with_right_panel_in_MDI_mode.png[align="left"]
+image::gmoccapy_with_right_panel_in_MDI_mode.png[align="left"]
 
 .Configuration of User Created Messages
 
@@ -362,7 +365,7 @@ This will add 5 macros to the MDI button list.
 Please note, that maximal 9 macros will appear in the GUI, due to place
 reasons. But it is no error placing more in your INI file.
 
-image::images/gmoccapy_mdi_hidden_keyboard.png[align="left"]
+image::gmoccapy_mdi_hidden_keyboard.png[align="left"]
 
 The name of the file must be *exactly the same* as the name given in the MACRO
 line. So the macro '*i_am_lost*' will call the file '*i_am_lost.ngc*'.
@@ -425,7 +428,7 @@ After pushing the '*execute macro button*', you will be asked to enter the
 values for '*X-pos Y-pos Z-pos*' and the macro will only run if all values
 have been given.
 
-image::images/gmoccapy_getting_macro_info.png[align="left"]
+image::gmoccapy_getting_macro_info.png[align="left"]
 
 [[gmoccapy:traj-section]]
 
@@ -487,7 +490,7 @@ These pins are made available to be able to use the screen without an touch
 panel, or protect it from excessive use by placing hardware buttons around
 the panel.
 
-image::images/gmoccapy_0_9_7_sim_hardware_button.png[align="left"]
+image::gmoccapy_0_9_7_sim_hardware_button.png[align="left"]
 
 === Velocities And Overrides
 
@@ -717,7 +720,7 @@ get the message to change to 'tool number 3', but also the description of that
 tool like '7.5 mm 3 flute cutter'. The information is taken from the tool
 table, so it is up to you what to display.
 
-image::images/manual_toolchange.png[align="left"]
+image::manual-tool-change.png[align="left"]
 
 * gmoccapy.toolchange-number HAL_S32 The number of the tool to be changed
 * gmoccapy.toolchange-change HAL_BIT Indicate that a tool has to be changed
@@ -738,7 +741,7 @@ This pins allows you to show the active tool offset values for X and Z in the
 tool information frame. You should know that they are only active after G43
 has been sent.
 
-image::images/gmoccapy_0_9_7_tool_info.png[align="left"]
+image::gmoccapy_0_9_7_tool_info.png[align="left"]
 
 * gmoccapy.tooloffset-x
 * gmoccapy.tooloffset-z
@@ -766,7 +769,7 @@ will need to do some additional settings and you may want to use the
 offered hal pin to get values in your own ngc remap procedure.
 
 [IMPORTANT] Before starting the first test, do not forget to enter the probe
-height and probe velocities on the settings page! See 
+height and probe velocities on the settings page! See
 <<gmoccapy:tool-measurement,Settings Page Tool Measurement>>
 
 It might be also a good idea to take a look at the tool measurement video:
@@ -783,7 +786,7 @@ You should follow these steps:
 
 here is a small sketch:
 
-image::images/sketch_auto_tool_measurement.png[align="left"]
+image::sketch_auto_tool_measurement.png[align="left"]
 
 With the first given tool change the tool will be measured and the offset will
 be set automatically to fit the block height. The advantage of the gmoccapy
@@ -871,7 +874,7 @@ You must copy the following files to your config directory
 
 First make a directory 'python' in your config folder from
 'your_linuxcnc-dev_directory/configs/sim/gmoccapy/python' copy 'toplevel.py' to
-your 'config_dir/python' folder. Copy 'remap.py' to your 
+your 'config_dir/python' folder. Copy 'remap.py' to your
 'config_dir/python' folder Copy 'stdglue.py' to your 'config_dir/python'
 folder.
 
@@ -926,14 +929,14 @@ net tool-prep-loop iocontrol.0.tool-prepare <= iocontrol.0.tool-prepared
 == The Settings Page
 
 To enter the page you will have to click on
-image:images/gmoccapy_settings_button.png[align="left"]
+image:gmoccapy_settings_button.png[align="left"]
 and give an unlock code, witch is *123* as default. If you want to change it
 at this time you will have to edit the hidden preference file, see
 <<gmoccapy:display-section,the display section>> for details.
 
 The page looks at the moment like so:
 
-image::images/gmoccapy_settings_appearance.png[align="left"]
+image::gmoccapy_settings_appearance.png[align="left"]
 
 The page is separated in three main tabs:
 
@@ -942,17 +945,17 @@ The page is separated in three main tabs:
 On this tab you will find the following options:
 
 Main Window::
-    Here you can select how you wish the GUI to start. The main reason for this was the wish to get an easy + 
+    Here you can select how you wish the GUI to start. The main reason for this was the wish to get an easy +
     way for the user to set the starting options without the need to touch code. +
     +
-    You have three options: + 
+    You have three options: +
 
 * start as full screen
 * start maximized
 * start as window
     +
-    If you select start as window the spinboxes to set the position and size will get active. + 
-    One time set, the GUI will start every time on the place and with the size selected. + 
+    If you select start as window the spinboxes to set the position and size will get active. +
+    One time set, the GUI will start every time on the place and with the size selected. +
     Nevertheless the user can change the size and position using the mouse, but that will +
     not have any influence on the settings. +
 
@@ -960,13 +963,13 @@ Main Window::
 use a touch screen.
 
 Keyboard::
-    The check-boxes allows the user to select if he want the on board keyboard to be shown immediately, + 
-    when entering the MDI Mode, when entering the offset page, the tooledit widget or when open a program + 
-    in the EDIT mode. The keyboard button on the bottom button list will not been affected by this settings, + 
-    so you be able to show or hide the keyboard by pressing the button. The default behavior will be set by + 
-    the check-boxes. + 
-    + 
-    Default are : +  
+    The check-boxes allows the user to select if he want the on board keyboard to be shown immediately, +
+    when entering the MDI Mode, when entering the offset page, the tooledit widget or when open a program +
+    in the EDIT mode. The keyboard button on the bottom button list will not been affected by this settings, +
+    so you be able to show or hide the keyboard by pressing the button. The default behavior will be set by +
+    the check-boxes. +
+    +
+    Default are : +
 
 * show keyboard on offset = True
 * show keyboard on tooledit = False
@@ -1005,7 +1008,7 @@ If this section is not sensitive, you have not installed a virtual keyboard,
 supported are 'onboard' and 'matchbox-keyboard'.
 
 On Touch Off::
-    give the option to show the preview tab or the offset page tab if you enter the touch off mode by clicking the 
+    give the option to show the preview tab or the offset page tab if you enter the touch off mode by clicking the
     corresponding bottom button.
 
 * show preview
@@ -1016,7 +1019,7 @@ any case.
 
 Show Aux Display::
     By clicking this button a additional window will be opened. This button is only sensitive, if a file named 'gmoccapy2.glade'
-    is located in your config folder. You can build the Aux Screen using Glade. 
+    is located in your config folder. You can build the Aux Screen using Glade.
 
 WARNING: 'The main window of the aux screen must be named window2'
 
@@ -1036,15 +1039,15 @@ The foreground color of the DRO can be selected with:
 * unhomed color = red
 
 'show dro in preview' +
-the DRO will be shown in the preview window + + 
+the DRO will be shown in the preview window + +
 
-'show offsets'+ 
-the Offsets will be shown in the preview window + + 
+'show offsets'+
+the Offsets will be shown in the preview window + +
 
-'show DTG' + 
-the distance to go will be shown in the preview window + + 
+'show DTG' +
+the distance to go will be shown in the preview window + +
  +
-'show DRO Button' + 
+'show DRO Button' +
 will allow you to display additional buttons on the left side of the DRO. +
 
 It will display: +
@@ -1059,21 +1062,21 @@ active gcode G20 / G21.
 [NOTE] *You can change through the DRO modes (absolute, relative, distance
 to go) by clicking on the DRO!*
 
-'Use Auto Units' + 
-allows to disable the auto units option of the display, so you can run a program in inches and watch the DRO in mm. + + 
+'Use Auto Units' +
+allows to disable the auto units option of the display, so you can run a program in inches and watch the DRO in mm. + +
 
-'size' + 
-allows to set the size of the DRO font, default is 28, if you use a bigger screen you may want to increase the size up to 56. 
-    If you do use 4 axis, the DRO font size will be 3/4 of the value, because of space reason. + + 
+'size' +
+allows to set the size of the DRO font, default is 28, if you use a bigger screen you may want to increase the size up to 56.
+    If you do use 4 axis, the DRO font size will be 3/4 of the value, because of space reason. + +
 
-'digits' +  
-sets the number of digits of the DRO from 1 to 5. + 
- 
+'digits' +
+sets the number of digits of the DRO from 1 to 5. +
+
 NOTE: Imperial will show one digit more that metric. So if you are in imperial machine units and set the digit value to 1, you will get no digit at all in metric.
 
-'toggle DRO mode' + 
-if not active, a mouse click on the DRO will not take any action. + 
-By default this checkbox is active, so every click on any DRO will toogle the DRO readout from actual to relative to DTG (distance to go). + + 
+'toggle DRO mode' +
+if not active, a mouse click on the DRO will not take any action. +
+By default this checkbox is active, so every click on any DRO will toogle the DRO readout from actual to relative to DTG (distance to go). + +
 
 Preview::
 
@@ -1113,7 +1116,7 @@ If you select an element in the preview, the selected element will be
 taken as rotation center point.
 
 File to load on start up::
-    Select the file you want to be loaded on start up. 
+    Select the file you want to be loaded on start up.
     In other GUI changing this was very cumbersome, because the users where forced to edit the INI File.
 
 Select the file you want to be loaded on start up. If a file is loaded, it can
@@ -1125,10 +1128,10 @@ if there aren't any filters given, you will only see *ngc* files. The path
 will be set according to the INI settings in [DISPLAY] PROGRAM_PREFIX
 
 Jump to dir::
-    you can set here the directory to jump to if you press the corresponding button 
+    you can set here the directory to jump to if you press the corresponding button
     in the file selection dialog.
 
-image::images/gmoccapy_file_selection_dialog_with_keyboard.png[align="left"]
+image::gmoccapy_file_selection_dialog_with_keyboard.png[align="left"]
 
 Themes and Sounds::
     This lets the user select what desktop theme to apply and what error and messages sounds should be played.
@@ -1136,14 +1139,14 @@ Themes and Sounds::
 
 === Hardware
 
-image::images/gmoccapy_settings_hardware.png[align="left"]
+image::gmoccapy_settings_hardware.png[align="left"]
 
 Hardware MPG Scales::
 For the different Hal Pin to connect MPG Wheels to, you may select individual scales to be applied.
-The main reason for this was my own test to solve this through hal connections, resulting in a very 
-complex hal file. Imagine a user having an MPG Wheel with 100 ipr and he wants to slow down the max 
-vel from 14000 to 2000 mm/min, that needs 12000 impulses, resulting in 120 turns of the wheel! 
-Or an other user having a MPG Wheel with 500 ipr and he wants to set the spindle override witch has 
+The main reason for this was my own test to solve this through hal connections, resulting in a very
+complex hal file. Imagine a user having an MPG Wheel with 100 ipr and he wants to slow down the max
+vel from 14000 to 2000 mm/min, that needs 12000 impulses, resulting in 120 turns of the wheel!
+Or an other user having a MPG Wheel with 500 ipr and he wants to set the spindle override witch has
 limits from 50 to 120 % so he goes from min to max within 70 impulses, meaning not even 1/4 turn.
 
 By default all scales are set using the calculation:
@@ -1227,7 +1230,7 @@ This button can be activated using the
 
 === Advanced Settings
 
-image::images/gmoccapy_settings_advanced.png[align="left"]
+image::gmoccapy_settings_advanced.png[align="left"]
 
 [[gmoccapy:tool-measurement]]
 
@@ -1249,7 +1252,7 @@ in absolute coordinates
 
  * X Pos. = The X position of the tool switch
  * Y Pos. = The Y position of the tool switch
- * Z Pos. = The X position of the tool switch, we will go as rapid move to 
+ * Z Pos. = The X position of the tool switch, we will go as rapid move to
  this coordinate
 
  * Max. Probe = is the distance to search for contact, an error will be
@@ -1266,7 +1269,7 @@ in absolute coordinates
 
  * Search Vel. = The velocity to search for the tool switch, after contact
  the tool will go up again and then goes toward the probe again with probe
- vel, so you will get better results. 
+ vel, so you will get better results.
 
  * Probe Vel. = Is the velocity for the second movement to the switch, it
  should be slower to get better touch results.(In sim mode, this is
@@ -1341,11 +1344,11 @@ jog buttons will be arranged in a different order.
 
 .Normal Lathe
 
-image::images/gmoccapy_lathe.png[align="left"]
+image::gmoccapy_lathe.png[align="left"]
 
 .Back Tool Lathe
 
-image::images/gmoccapy_back_tool_lathe.png[align="left"]
+image::gmoccapy_back_tool_lathe.png[align="left"]
 
 As you see the R DRO has a black background and the D DRO is gray. This will
 change according to the active G-Code G7 or G8. The active mode is visible by
@@ -1376,7 +1379,7 @@ offset and the tool table is showing all lathe relevant information.
 
 == Plasma Specific Section
 
-image::images/gmoccapy_plasma_1.png[align="left"]
+image::gmoccapy_plasma_1.png[align="left"]
 
 There is a very good WIKI, which is actually growing, maintained by Marius
 see http://wiki.linuxcnc.org/cgi-bin/wiki.pl?Gmoccapy_plasma[Plasma wiki page]
@@ -1425,8 +1428,8 @@ Auto Tool Measurement Machine = http://youtu.be/1arucCaDdX4
 
 If you get strange numbers in the info area of gmoccapy like:
 
-image::images/strange_numbers.png[align="left"]
+image::strange_numbers.png[align="left"]
 
 You have made your config file using an older version of StepConfWizard.
 It has made a wrong entry in the INI file under the [TRAJ] named
-MAX_LINEAR_VELOCITY = xxx. Change that entry to MAX_VELOCITY = xxx 
+MAX_LINEAR_VELOCITY = xxx. Change that entry to MAX_VELOCITY = xxx

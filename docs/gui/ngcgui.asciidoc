@@ -1,11 +1,14 @@
+
+:imagesdir: gui/images
+
 = NGCGUI
 
 [[cha:ngcgui]] (((NGCGUI)))
 
-image::images/ngcgui.png[]
+image::ngcgui.png[]
 
 == Overview
-    
+
 * 'NGCGUI' is a tcl application for using Machinekit subroutines.
 * 'NGCGUI' can run as a standalone application or can be embedded in
    multiple tab pages in the axis gui
@@ -50,7 +53,7 @@ The touchy examples also demonstrate incorporation of a gladevcp backplot
 viewer (gremlin_view).
 
 The simplest application is found as:
- 
+
   Sample Configurations / sim / axis / ngcgui /ngcgui_simple
 
 A comprehensive example showing gcmc compatibility is at:
@@ -103,11 +106,11 @@ To try a demonstration, select a sim configuration and start
 the linuxCNC program.
 
 If using the axis gui, press the 'E-Stop'
-image:images/tool_estop.gif[] then 'Machine Power'
-image:images/tool_power.gif[] then 'Home All'. Pick a ngcgui tab, fill in
+image:tool_estop.gif[] then 'Machine Power'
+image:tool_power.gif[] then 'Home All'. Pick a ngcgui tab, fill in
 any empty blanks with sensible values and press
 'Create Feature' then 'Finalize'. Finally  press the 'Run'
-image:images/tool_run.gif[] button to watch it run.  Experiment
+image:tool_run.gif[] button to watch it run.  Experiment
 by creating multiple features and features from different tab pages.
 
 Other guis will have similar functionality but the buttons and names
@@ -259,7 +262,7 @@ Notes:
       If --ini is NOT specified:
          search for a running linuxCNC and use it's inifile
 ----
-    
+
 [NOTE]
 As a standalone application, pyngcgui can read an ini file (or a
 running linuxCNC application) to create tab pages for multiple
@@ -281,7 +284,7 @@ sections below for additional items needed)
 The optional truetype tracer items are used to specify an ngcgui-compatible tab page
 that uses the application truetype-tracer.  The truetype-tracer application must
 be installed independently and located in the user PATH.
- 
+
 === Embedding PYNGCGUI as a gladevcp tab page in a gui
 The following INI file items go in the [DISPLAY] section for use with the
 axis, gscreen, or touchy guis.  (See additional sections below for additional
@@ -383,7 +386,7 @@ PROGRAM_PREFIX    = ../../nc_files
 ----
 
 [NOTE]
-The above is not a complete axis gui INI -- the items show are those 
+The above is not a complete axis gui INI -- the items show are those
 used by ngcgui.  Many additional items are required by Machinekit to have
 a complete INI file.
 
@@ -475,7 +478,7 @@ directory(ies) and put them at the beginning of the [RS274NGC]SUBROUTINE_PATH.
 In the following example, files in /home/myname/machinekit/mysubs will be found before
 files in ../../nc_files/ngcgui_lib.
 
-.Adding User Directory Example: 
+.Adding User Directory Example:
 ----
 [RS274NGC]SUBROUTINE_PATH = /home/myname/machinekit/mysubs:../../nc_files/ngcgui_lib:../../nc_files/ngcgui_lib/utilitysubs`
 ----
@@ -591,7 +594,7 @@ Note:    Multiple options are separated by blanks.
          nonew, noremove, and noiframe options are not applicable
          for "Custom" tabs.  Do not use "Custom" tabs if you want
          to limit the user's ability to select subfiles or create
-         additional tab pages. 
+         additional tab pages.
 
 Item:    [DISPLAY]GCMC_INCLUDE_PATH = dirname1:dirname2:...
 Example: [DISPLAY]GCMC_INCLUDE_PATH = /home/myname/gcmc_includes:/home/myname/gcmc_includes2
@@ -768,14 +771,14 @@ for the file is finalized, ngcgui passes the file as input to the gcmc
 compiler and, if the compile is successful, the resulting gcode file
 is sent to linuxCNC for execution.  The resulting file is formatted as
 single-file subroutine; .gcmc files and .ngc files can be intermixed
-by ngcgui. 
+by ngcgui.
 
 The variables identified for  inclusion in ngcgui are tagged with lines
 that will appear as comments to the gcmc compiler.
 
 .Example variable tags formats
 ----
-//ngcgui: varname1 = 
+//ngcgui: varname1 =
 //ngcgui: varname2 = value2
 //ngcgui: varname3 = value3, label3;
 ----
@@ -788,13 +791,13 @@ that will appear as comments to the gcmc compiler.
 ----
 For these examples, the entry box for varname1 will have no default,
 the entry box for varname2 will have a default of value2, and the
-entry box for varname 3 will have a default of value 3 and a label 
+entry box for varname 3 will have a default of value 3 and a label
 label3 (instead of varname3).  The default values must be numbers.
 
 To make it easier to modify valid lines in a gcmc file, alternate
-tag line formats accepted.  The alternate formats ignore trailing 
+tag line formats accepted.  The alternate formats ignore trailing
 semicolons (;) and trailing comment markers (//)  With this provision,
-it is often makes it possible to just add the //ngcgui: tag to 
+it is often makes it possible to just add the //ngcgui: tag to
 existing lines in a .gcmc file.
 
 .Alternate variable tag formats
@@ -844,7 +847,7 @@ set to inches with the option setting:
 
 A preamble file, if used, can set a mode (g20 or g21) that
 conflicts with the mode used by a gcmc file.  To ensure that
-the gcmc program mode is in effect, include the following 
+the gcmc program mode is in effect, include the following
 statement in the .gcmc file:
 
 ----
@@ -864,14 +867,13 @@ GCMC_INCLUDE_PATH = ../../nc_files/gcmc_lib
 The following shows the DB25 subroutine. In the first photo you see where you
 fill in the blanks for each variable.
 
-image::images/ngcgui-db25-1.png[]
+image::ngcgui-db25-1.png[]
 
 This photo shows the backplot of the DB25 subroutine.
 
-image::images/ngcgui-db25-2.png[]
+image::ngcgui-db25-2.png[]
 
 This photo shows the use of the new button and the custom tab to create
 three DB25 cutouts in one program.
 
-image::images/ngcgui-db25-3.png[]
-
+image::ngcgui-db25-3.png[]
