@@ -139,3 +139,4 @@ to create the math image and gimp to screen capture and save to a png.
 
 check asciidoc cheatsheet http://powerman.name/doc/asciidoc or user manual
 http://www.methods.co.nz/asciidoc/userguide.html for details about format.
+
