@@ -2,13 +2,9 @@
 layout: docs
 ---
 
-== Foo!
+== Foo! Bar!
 
-docdir = {docdir}
-
-:imagesdir: {docdir}/docs/documenting/images
-
-imagesdir = {imagesdir}
+:imagesoutdir: docs/documenting/diagramtest
 
 This is a demo page for the asciidoctor-diagram plugin.
 
