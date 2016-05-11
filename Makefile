@@ -12,8 +12,12 @@ ADOC_FILES := $(patsubst %.asciidoc, %.adoc,  $(ASCIIDOC_FILES))
 # remove extension in links containing .asciidoc for Jekyll
 # remove lines containging all '=' characters
 # fix links for includes and links to other pages
-%.adoc: %.asciidoc  frontmatter.txt
-	cat frontmatter.txt $< >$@
+%.adoc: %.asciidoc  frontmatter.metadata.txt options.txt
+	echo "---"  >$@
+	cat frontmatter.metadata.txt >>$@
+	echo "page-source: " $< >>$@
+	echo "---"  >>$@
+	cat options.txt  $<  >>$@
 	sed -i '/^=\{5,\}=*$=/d' $@
 # fix includes
 	sed -i -e 's/\(^include::\)\(.*\)\(\.asciidoc\[.*\]\)/include::{docs-dir}\/\2\.adoc\[\]/g' $@
