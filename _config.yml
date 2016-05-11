@@ -18,3 +18,5 @@ asciidoctor:
     - hardbreaks!
     - source-highlighter=pygments
     - pygments-css=style
+
+incremental: true
