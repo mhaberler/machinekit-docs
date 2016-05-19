@@ -7,3 +7,6 @@ test/
 docs/man/man1/index.asciidoc
 docs/man/man3/index.asciidoc
 docs/man/man9/index.asciidoc
+_manpages/man1/index.asciidoc
+_manpages/man3/index.asciidoc
+_manpages/man9/index.asciidoc
