@@ -35,6 +35,13 @@ defaults:
       layout: "docs"
       docs-dir: "docs"
 
+# define the _manpages collection
+# accessible as site.manpages
+collections:
+  manpages:
+   # render output regardless in old location
+   output: true
+   permalink: /docs/man/:path
 
 # stage manpage sources here for comparison
 exclude: [Makefile,
