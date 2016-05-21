@@ -3,23 +3,16 @@
 
 :skip-front-matter:
 
-CAN developing
-//__==============
+= CAN developing
 
-Contents
-//__========
-
-. <<starting-with-socketcan,Starting with SocketCAN>>
-
-[[starting-with-socketcan]]Starting with socketcan
-//__==================================================
+== Starting with socketcan
 
 The first things to do when starting to develop for CAN for HAL is to get
 comfortable with the CAN interface. SocketCAN is native to Linux, and
 we can use SocketCAN when developing so there is no need for hardware
 or devices.
 
-You should probably have a go at this link:http://www.can-cia.org/fileadmin/cia/files/icc/13/kleine-budde.pdf[document which describes socketcan]
+You should probably have a go at this link:https://www.kernel.org/doc/Documentation/networking/can.txt[document which describes socketcan]
 to get a little background of what SocketCAN is. When we have used
 SocketCAN then the real hardware works in the same way. Only difference will be
 that we swap the driver to the real hardware.
