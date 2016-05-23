@@ -82,7 +82,7 @@ delayline.**delay** float in
 The delay in thread periods.
 ====
 
-delayline.__{type}__**-in**__{N}__ the input sample pin
+delayline.**in{N}**-__{type}__ the input sample pin
 
 [indent=4]
 ====
@@ -93,11 +93,11 @@ line, so flt-in2 is the pin that is generated after bit-in1.
 
 The input sample pin is matched by output sample pin.
 
-**delayline.flt-in0** is the source of the delayed
-delayline.flt-out0 pin
+**delayline.in0-flt** is the source of the delayed
+delayline.out0-flt pin
 ====
 
-delayline.__{type}__**-out**__{N}__ the input sample pin
+delayline.**out{N}**-__{type}__ the output sample pin
 
 [indent=4]
 ====
@@ -108,7 +108,7 @@ line, so flt-out2 is the pin that is generated after bit-out1.
 
 The output sample pin is matched by input sample pin
 
-**delayline.flt-out0 **is the delay of the delayline.flt-out0
+**delayline.out0-flt**is the delay of the delayline.flt-out0
 input sample
 ====
 
