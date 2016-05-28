@@ -23,13 +23,13 @@ int hal_del_funct_from_thread(const char *__funct_name__, const char *__thread_n
 
 
 == ARGUMENTS
-.IP __funct_name__
+__funct_name__
 The name of the function
 
-.IP __thread_name__
+__thread_name__
 The name of the thread
 
-.IP __position__
+__position__
 The desired location within the thread.  This determines when the function will
 run, in relation to other functions in the thread.  A positive number indicates
 the desired location as measured from the beginning of the thread, and a
