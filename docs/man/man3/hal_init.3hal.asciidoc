@@ -27,9 +27,7 @@ The name of this hal component
 
 == DESCRIPTION
 
-**hal_init** sets up HAL and RTAPI.  It must be called by any
-module that intends to use the API, before any other RTAPI
-calls.
+**hal_init** creates a HAL component.
 
 __compname__ a string that identifies the component.
 The string may be no longer than **RTAPI_NAME_LEN**
