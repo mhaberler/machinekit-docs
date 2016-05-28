@@ -10,7 +10,7 @@
 
 == NAME
 
-hal_export_funct -- create a realtime function callable from a thread
+FOOBAR_hal_export_funct -- create a realtime function callable from a thread
 
 
 
