@@ -21,25 +21,25 @@ int hal_export_funct(const char *__name__, hal_funct_t __funct__, void *__arg__,
 
 
 == ARGUMENTS
-.IP __name__
+__name__
 The name of the function.
 
-.IP __funct__
+__funct__
 The pointer to the function
 
-.IP __arg__
+__arg__
 The argument to be passed as the first parameter of __funct__
 
-.IP __uses_fp__
+__uses_fp__
 Nonzero if the function uses floating-point operations, including assignment
 of floating point values with "=".
 
-.IP __reentrant__
+__reentrant__
 If reentrant is non-zero, the function may be preempted and called again
 before the first call completes.  Otherwise, it may only be added to one
 thread.
 
-.IP __comp_id__
+__comp_id__
 A HAL component identifier returned by an earlier call to **hal_init**.
 
 
