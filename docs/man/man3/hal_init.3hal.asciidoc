@@ -13,7 +13,6 @@
 hal_init -- initialize a component
 
 
-
 == SYNTAX
  int hal_init(const char *__compname__)
 
