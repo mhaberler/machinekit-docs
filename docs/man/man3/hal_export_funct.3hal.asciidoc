@@ -2,7 +2,7 @@
 ---
 :skip-front-matter:
 
-= hal_export_funct(3hal)
+= XXXXXXXhal_export_funct(3hal)
 :manmanual: HAL Components
 :mansource: ../man/man3/hal_export_funct.3hal.asciidoc
 :man version : 
