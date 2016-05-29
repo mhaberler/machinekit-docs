@@ -20,7 +20,7 @@ hal_malloc -- Allocate space in the HAL shared memory area
 
 
 == ARGUMENTS
-.IP __size__
+__size__
 Gives the size, in bytes, of the block
 
 
