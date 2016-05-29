@@ -28,7 +28,7 @@ defaults:
     scope:
       path: ""
     values:
-      edit-repo: "https://github.com/machinekit/machinekit-docs/"
+      edit-repo: "https://github.com/mhaberler/machinekit-docs/"
       edit-branch: "master"
   -
     scope:
